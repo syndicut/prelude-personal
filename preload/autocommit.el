@@ -13,7 +13,7 @@
           (setq autocommit-dir-set (remove dn autocommit-dir-set))
           (message (concat "Committing org files in " dn))
           (shell-command (concat "cd " dn " && git commit -m 'Updated org files.'"))
-          (shell-command (concat "cd " dn " && git push & /usr/bin/true")))
+          (shell-command (concat "cd " dn " && nohup git push & /usr/bin/true")))
         dn)
        (setq autocommit-dir-set (cons dn autocommit-dir-set)))))
  
@@ -30,3 +30,5 @@
   (interactive)
   (message "Set up autocommit save hook for this buffer.")
   (add-hook 'after-save-hook 'autocommit-after-save-hook nil t))
+
+(add-hook 'after-save-hook 'autocommit-after-save-hook nil t)
