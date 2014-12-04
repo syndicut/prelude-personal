@@ -1,6 +1,7 @@
 (setq default-cursor-type 'bar)
 (setq prelude-whitespace nil)
-(set-default-font "Menlo 16")
+(set-default-font "Menlo-16")
+(set-fontset-font "fontset-default" 'cyrillic '("menlo" . "ISO10646-1"))
 (setq org-agenda-files (list "~/org/todo.org"))
 (find-file "~/org/todo.org")
 (setq org-agenda-overriding-columns-format "%TODO %3PRIORITY %5Effort(TIME){:} %80ITEM(Task)" )
